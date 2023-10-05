@@ -1,0 +1,187 @@
+{% extends "layout.html" %} {% block body %}
+<style>
+ body.default-body{
+    display: flex;
+    flex-direction: unset;
+    align-items: center;
+    justify-content: space-evenly;
+    /*grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-areas: "div preguntras-creadas";*/
+    min-height: 100vh;
+}
+</style>
+<header>
+  <nav class="navbar">
+    <span class="navbar-navTittle" id="header-pregunta">
+      <input
+        type="text"
+        id="tituloP"
+        class="nav-item-input"
+        placeholder="Sin título"
+      />
+    </span>
+  </nav>
+</header>
+<div class="div">
+  <div class="card-pregunta" id="crearpreguntas">
+    <div class="add_btn">
+      <i class="fa-solid fa-circle-plus"></i>
+    </div>
+    <h3>Crear nueva pregunta</h3>
+  </div>
+</div>
+<div class="preguntas-creadas" id="preguntas-creadas">
+  <span class="item-label">Buscar por temática:</span>
+  <select class="footer-item-select" id="selectT">
+    <option value="Seleccionar">Seleccionar</option>
+  </select>
+  <button class="footer-button save-button2" onclick="LlenarTabla()">
+    Consultar
+  </button>
+  <div class="content-pregunta">
+    <div>
+      <h2>Pregunta</h2>
+      <table class="table table-hover" id="tabla-preguntas">
+        <thead>
+          <tr>
+            <th scope="col">Id Pregunta</th>
+            <th scope="col">Pregunta</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody id="listapreguntas0"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div class="contenedor" id="contenedor">
+  <div class="contenedor-interior">
+    <div class="contenedor-pregunta">
+      <div class="explicacion-pregunta">
+        <div id="pregunta">
+          <span class="tittle-pregunta" id="enunciado">
+            <p
+              class="enunciado-pregunta"
+              contenteditable="true"
+              placeholder="Escribe aquí tu pregunta..."
+            ></p>
+          </span>
+        </div>
+      </div>
+      <div class="guardarPregunta">
+        <i class="fa-solid fa-floppy-disk" onclick=" GuardarPregunta()"></i>
+      </div>
+    </div>
+    <div class="contenedor-respuestas">
+      <ul class="contenedor-opciones">
+        <li class="contenedor-option" id="resp0">
+          <div class="interior-opcion">
+            <div class="marcar-correcta">
+              <div>
+                <input type="radio" name="opciones" id="input0" />
+              </div>
+            </div>
+            <div class="explicacion-respuesta">
+              <p
+                class="opcion-0"
+                contenteditable="true"
+                placeholder="Escribe aquí tu opción de respuesta"
+              ></p>
+            </div>
+          </div>
+        </li>
+
+        <li class="contenedor-option" id="resp1">
+          <div class="interior-opcion">
+            <div class="marcar-correcta">
+              <div>
+                <input type="radio" name="opciones" id="input01" />
+              </div>
+            </div>
+            <div class="explicacion-respuesta">
+              <p
+                class="opcion-1"
+                contenteditable="true"
+                placeholder="Escribe aquí tu opción de respuesta"
+              ></p>
+            </div>
+          </div>
+        </li>
+        <li class="contenedor-option" id="resp2">
+          <div class="interior-opcion">
+            <div class="marcar-correcta">
+              <div>
+                <input type="radio" name="opciones" id="input02"/>
+              </div>
+            </div>
+            <div class="explicacion-respuesta" id="pRespuestas">
+              <p
+                class="opcion-2"
+                contenteditable="true"
+                placeholder="Escribe aquí tu opción de respuesta"
+              ></p>
+            </div>
+          </div>
+        </li>
+        <li class="contenedor-option" id="resp3">
+          <div class="interior-opcion">
+            <div class="marcar-correcta">
+              <div>
+                <input type="radio" name="opciones" id="input03" />
+              </div>
+            </div>
+            <div class="explicacion-respuesta">
+              <p
+                class="opcion-3"
+                contenteditable="true"
+                placeholder="Escribe aquí tu opción de respuesta"
+              ></p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="footer" id="footer">
+  <ul class="footer-nav">
+    <!-- Aquí se cargan las temáticas -->
+    <li class="footer-item">
+      <span class="footer-item-label">Temática:</span>
+      <select class="footer-item-select" id="selTematicas">
+        <option value="Seleccionar">Seleccionar</option>
+      </select>
+    </li>
+    <!-- Aquí se definen los puntos de las preguntas -->
+    <li class="footer-item">
+      <span class="footer-item-label">Asignar Puntos:</span>
+      <select class="footer-item-select" id="puntos">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+      </select>
+    </li>
+  </ul>
+  <div class="footer-buttons">
+    <button class="footer-button cancel-button">Cancelar</button>
+    <button class="footer-button refresh-button" id="btnActualizar">Actualizar</button>
+    <button class="footer-button save-button" id="btnGuardar">Guardar</button>
+  </div>
+</div>
+{% endblock %}
+
+<!-- Aquí se define la parte del js-->
+{% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    cargarTematica();
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    respuestaCorrecta();
+  });
+</script>
+{% endblock %}

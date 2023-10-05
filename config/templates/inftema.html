@@ -1,0 +1,55 @@
+{% extends "layout.html" %} {% block body %}
+<div class="contenedor-inftema" id="contenedor-inftema">
+    <h1>Información Temática</h1>
+    <div class="formulario">
+        <div class="formulario__grupo" id="grupo__tematica">
+            <label for="Titulo" class="formulario__label">Tema</label>
+            <div class="formulario__grupo-input">
+                <input type="text" name="Titulo" id="Tituloinf" placeholder="Titulo">
+            </div>
+        </div>
+        <div class="formulario__grupo" id="grupo__Idtematica">
+            <label for="Id" class="formulario__label">ID</label>
+            <li class="footer-item">
+                <span class="footer-item-label"></span>
+                <select class="item-select" id="selinftema-id">
+                    <option value="Seleccionar">Seleccionar</option>
+                </select>
+            </li>
+        </div>
+        <div class="formulario__grupo" id="grupo__Nivel">
+            <label for="Nivel" class="formulario__label">Nivel</label>
+            <li class="footer-item">
+                <span class="footer-item-label"></span>
+                <select class="item-select" id="selinftema-nivel">
+                    <option value="Seleccionar">Seleccionar</option>
+                </select>
+            </li>
+        </div>
+    </div>
+    <div class="formulario__grupo" id="grupo__Descripcion">
+        <label for="Detalles">Detalles</label>
+        <div class="">
+            <textarea cols="30" rows="5" id="desc" name="Detalles" placeholder="Digite una descripcion"></textarea>
+        </div>
+    </div>
+    <div>
+        <button type="submit" onclick="saveinftema2()" class="bttn">
+            Enviar
+        </button>
+    </div>
+
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    cargarTematica2();
+  });
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    cargarNivel();
+  });
+</script>
+{% endblock %}

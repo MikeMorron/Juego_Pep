@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/menuPrincipal.css' ) }}">
+</head>
+<body>
+    <a href="/avatar">
+        <img id="mainAvatar" src="/static/img/avatar/avatar1.jpg" alt="" class="imgAvatar">
+        <script>
+            // Verifica si hay un avatar seleccionado guardado en el almacenamiento local
+            var savedAvatar = localStorage.getItem('selectedAvatar');
+            
+            if (savedAvatar) {
+                // Si hay un avatar seleccionado guardado, muestra ese avatar en la página
+                var mainAvatar = document.getElementById('mainAvatar');
+                mainAvatar.src = savedAvatar;
+            }
+        </script>
+    </a>
+
+
+    <div class="contenedor">
+        <div class="opciones">
+            <img src="/static/img/JugandoImg/logoPEP.png" class="imgPep" alt="">
+            <div class="botones">
+                <a href="/jugando" id="btn_nuevo" class="btn" style="--clr:#DEED43">
+                    <span>Nuevo Juego</span><i></i>
+                </a>
+                <a href="/jugando" id="btn_continuar" class="btn" style="--clr:#DEED43">
+                    <span>Continuar Jugando</span><i></i>
+                </a>
+                <a href="/avatar" id="btn_seleccionar" class="btn" style="--clr:#DEED43">
+                    <span>Seleccionar Avatar</span><i></i>
+                </a>
+                <a href="/" id="btn_salir" class="btn" style="--clr:#DEED43">
+                    <span>Salir</span><i></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/config/static/js/jugando.js"></script>
+</body>
+</html>

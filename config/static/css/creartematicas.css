@@ -1,0 +1,86 @@
+.contenedor-tematica {
+    width: 95%;
+    height: 550px;
+    max-width: 900px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .5);
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0px 30px rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.interior {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+}
+
+.input {
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-top: 20px;
+}
+
+
+h2 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
+}
+
+.input input {
+    width: 100%;
+    padding: 10px 16px;
+    border: 2px solid rgba(255, 255, 255, .5);
+    background: transparent;
+    border-radius: 20px;
+    outline: none;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.input label {
+    display: flex;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px 0px;
+    color: #fff;
+}
+
+button{
+    background-color: #4fb2fe;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.bttn{
+    color: #fff;
+    background-color: #4fb2fe;
+}
+
+.bttnInf{
+    color: #fff;
+    background-color: #4fb2fe;
+}
